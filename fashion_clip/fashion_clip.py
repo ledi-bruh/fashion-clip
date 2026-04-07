@@ -156,8 +156,8 @@ class FashionCLIP:
         if name in _MODELS or _is_hugging_face_repo(name, auth_token):
             # if using know short-hand, extract from dict
             name = _MODELS[name] if name in _MODELS else name
-            model = CLIPModel.from_pretrained(name, use_auth_token=auth_token)
-            preprocessing = CLIPProcessor.from_pretrained(name, use_auth_token=auth_token)
+            model = CLIPModel.from_pretrained(name)
+            preprocessing = CLIPProcessor.from_pretrained(name)
             hash = _model_processor_hash(name, model, preprocessing)
 
         # else it doesn't use HF, assume using OpenAI CLiP
