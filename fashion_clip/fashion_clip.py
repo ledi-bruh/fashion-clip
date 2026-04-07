@@ -10,7 +10,7 @@ import fashion_clip.attention_map as attention_map
 import PIL
 import hashlib
 import random
-from annoy import AnnoyIndex
+# from annoy import AnnoyIndex
 import time
 import json
 import validators
@@ -125,7 +125,8 @@ class FashionCLIP:
         if approx and dataset:
             print('Building Approx NN index...', end='')
             # build approx NN
-            self.nn_index = AnnoyIndex(512, "dot")
+            raise NotImplementedError()
+            self.nn_index = ...  # AnnoyIndex(512, "dot")
             for idx, v in enumerate(self.image_vectors):
                 self.nn_index.add_item(idx, v)
             self.nn_index.build(50)  # 10 trees
